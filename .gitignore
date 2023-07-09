@@ -3,6 +3,7 @@
 
 # production
 /build
+.idei
 
 # local env files
 .env*.local
