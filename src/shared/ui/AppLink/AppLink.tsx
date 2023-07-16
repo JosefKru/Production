@@ -21,6 +21,7 @@ const AppLink: FC<AppLinkProps> = (props) => {
     theme = AppLinkTheme.PRIMARY,
     ...otherProps
   } = props
+
   return (
     <Link
       to={to}

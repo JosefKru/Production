@@ -3,6 +3,20 @@ import webpack from 'webpack'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif)$/i, // В эту регулярку так же можно добавить расширения шрифтов для работы с ними
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  }
+
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  }
+
   const cssLoader = {
     test: /\.s[ac]ss$/i,
     use: [
@@ -22,11 +36,12 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
       'sass-loader',
     ],
   }
+
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
     exclude: /node_modules/,
   }
 
-  return [typescriptLoader, cssLoader]
+  return [fileLoader, svgLoader, typescriptLoader, cssLoader]
 }
