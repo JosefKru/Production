@@ -4,6 +4,7 @@
 # production
 /build
 .idei
+.vscode
 
 # local env files
 .env*.local
