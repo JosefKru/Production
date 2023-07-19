@@ -1,3 +1,5 @@
+type Modes = Record<string, boolean | string>
+
 export function classNames(
   cls: string,
   mods: Modes = {},
