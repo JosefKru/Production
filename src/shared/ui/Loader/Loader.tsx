@@ -8,18 +8,9 @@ interface LoaderProps {
 export const Loader = ({className}: LoaderProps) => {
   return (
     <div className={classNames('lds-default', {}, [className])}>
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
+      {[...Array(12)].map((_, index) => (
+        <div key={index} />
+      ))}
     </div>
 
   )
