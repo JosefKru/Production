@@ -1,3 +1,4 @@
+import path from 'path'
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
@@ -29,6 +30,19 @@ export default {
     // Обнаружил разницу между МАК ОС и ВИНДОУС O_o
     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
   ],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
+
+  //Эта конфигурация помогает правильно интерпретировать пути к модулям
+  moduleNameMapper: {
+    // '^\\.s?css$': 'identity-obj-proxy',
+    // '^src/(.*)$': '<rootDir>/src/$1',
+    '\\.s?css$': 'identity-obj-proxy',
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent'),
+    '^shared/(.*)$': '<rootDir>/src/shared/$1',
+    '^widgets/(.*)$': '<rootDir>/src/widgets/$1',
+    '^app/(.*)$': '<rootDir>/src/app/$1',
+    
+  },
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,

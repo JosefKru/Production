@@ -1,9 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
+    "types": ["jest", "node"],
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
+    "target": "es6",
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
@@ -11,12 +12,13 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
     "paths": {
-      "*": ["./src/*"]
-    }
+      "*": ["./src/*"],
+    },
   },
   "ts-node": {
     "compilerOptions": {
       "module": "commonjs"
     }
-  }
+  },
+  "include": ["./src/**/*.ts", "./src/**/*.tsx", "./config/jest/**/*.ts"],
 }
