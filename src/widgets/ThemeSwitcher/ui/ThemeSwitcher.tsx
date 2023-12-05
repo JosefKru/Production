@@ -4,7 +4,6 @@ import { Theme, useTheme } from 'app/providers/ThemeProvider'
 import LightIcon from 'shared/assets/icons/theme-light.svg'
 import DarkIcon from 'shared/assets/icons/theme-dark.svg'
 import Button, { ThemeButton } from 'shared/ui/Button/Button'
-import UserAvatar from 'shared/assets/icons/user-avatar-default.png'
 
 interface ThemeSwitcherProps {
   className?: string
